@@ -7,3 +7,5 @@
         public ICollection<Movie>? Movies { get; set; }
     }
 }
+
+

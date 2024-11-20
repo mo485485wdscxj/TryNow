@@ -20,6 +20,7 @@ namespace Movies_project.DAL.Repositories.Impelementions
 
         public bool Add(CreateMovieDto dto)
         {
+
             var movie = new Movie
             {
                 Title = dto.Title,
@@ -30,6 +31,7 @@ namespace Movies_project.DAL.Repositories.Impelementions
                 }).ToList(),
                 Directors = dto.Directors!.Select(x => new Director
                 {
+                    
                     Contact = x.Contact,
                     Name = x.Name,
                     Email = x.Email,
@@ -40,7 +42,7 @@ namespace Movies_project.DAL.Repositories.Impelementions
                 }).ToList(),
             };
 
-            _context.Add(movie);
+            _context.Movies.Add(movie);
 
             return _context.SaveChanges() > 0;
         }
@@ -57,7 +59,7 @@ namespace Movies_project.DAL.Repositories.Impelementions
                     ReleaseYear = x.ReleaseYear,
                     Categories = x.Categories!.Select(c => new CategoryDto
                     {
-                        Name = c.Name,
+                        Name = c.Name,                        
                     }).ToList(),
                     Directors = x.Directors!.Select(d => new DirectorDto
                     {

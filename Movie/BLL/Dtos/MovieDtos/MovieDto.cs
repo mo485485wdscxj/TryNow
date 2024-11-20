@@ -1,6 +1,5 @@
 ﻿using Movies_project.BLL.Dtos.CategoryDtos;
 using Movies_project.BLL.Dtos.DirectorDtos;
-using Movies_project.DAL.Models;
 
 namespace Movies_project.BLL.Dtos.MovieDtos
 {

@@ -25,7 +25,7 @@ namespace Movies_project.DAL.Repositories.Impelementions
                 Nationality = new Nationality
                 {
                     Name = dto.Nationality.Name,
-                }
+                },
             };
             _context.Add(director);
 

@@ -12,7 +12,10 @@ namespace Movies_projects.DAL.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Director>().HasOne(x=>x.Nationality).WithOne(x=>x.Director).OnDelete(DeleteBehavior.SetNull);
+            modelBuilder.Entity<Director>()
+                .HasOne(x=>x.Nationality)
+                .WithOne(x=>x.Director)
+                .OnDelete(DeleteBehavior.SetNull);
         }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Category> Categories { get; set; }
