@@ -1,4 +1,4 @@
-﻿namespace Movies_project.DAL.Data.Models
+﻿namespace Movies_project.DAL.Models
 {
     public class Category
     {

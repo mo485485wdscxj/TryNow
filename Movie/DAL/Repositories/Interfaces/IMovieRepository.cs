@@ -5,7 +5,7 @@ namespace Movies_project.DAL.Repositories.Interfaces
     public interface IMovieRepository
     {
         IEnumerable<MovieDto> getAll();
-        MovieDtoForOne? getById(int id);
+        MovieDto? getById(int id);
         bool Add(CreateMovieDto dto);
     }
 }

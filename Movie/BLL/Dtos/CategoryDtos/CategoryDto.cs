@@ -5,7 +5,6 @@ namespace Movies_project.BLL.Dtos.CategoryDtos
 {
     public class CategoryDto
     {
-        public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
     }
 }

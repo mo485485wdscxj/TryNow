@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Movies_project.DAL.Data.Models
+namespace Movies_project.DAL.Models
 {
     public class Nationality
     {
@@ -9,6 +9,6 @@ namespace Movies_project.DAL.Data.Models
         public string Name { get; set; } = string.Empty;
 
         public int? DirectorId { get; set; }
-        public Director? Director { get; set; } = new Director();
+        public Director? Director { get; set; }
     }
 }

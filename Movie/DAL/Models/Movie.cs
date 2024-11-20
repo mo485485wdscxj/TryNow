@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Movies_project.DAL.Data.Models
+namespace Movies_project.DAL.Models
 {
     public class Movie
     {
@@ -9,7 +9,7 @@ namespace Movies_project.DAL.Data.Models
         public string Title { get; set; } = string.Empty;
         public DateTime ReleaseYear { get; set; }
 
-        public ICollection<Director>? Directors { get; set; }
-        public ICollection<Category>? Categories { get; set; }
+        public ICollection<Director>? Directors { get; set; } = new List<Director>();
+        public ICollection<Category>? Categories { get; set; } = new List<Category>();
     }
 }

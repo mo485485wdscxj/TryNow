@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Movies_project.DAL.Data.Models;
+using Movies_project.DAL.Models;
 
 namespace Movies_projects.DAL.Data
 {

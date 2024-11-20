@@ -24,18 +24,18 @@ namespace Movies_project.DAL.Repositories.Impelementions
             {
                 Title = dto.Title,
                 ReleaseYear = dto.ReleaseYear,
-                Categories = dto.Categories.Select(x => new Category
+                Categories = dto.Categories!.Select(x => new Category
                 {
                     Name = x.Name,
                 }).ToList(),
-                Directors = dto.Directors.Select(x => new Director
+                Directors = dto.Directors!.Select(x => new Director
                 {
                     Contact = x.Contact,
                     Name = x.Name,
                     Email = x.Email,
                     Nationality = new Nationality
                     {
-                        Name = x.Nationality.Name
+                        Name = x.Nationality!.Name
                     }
                 }).ToList(),
             };
@@ -48,64 +48,56 @@ namespace Movies_project.DAL.Repositories.Impelementions
         public IEnumerable<MovieDto> getAll()
         {
             var books = _context.Movies
-                .Include(x => x.Directors)
+                .Include(x => x.Directors)!
                 .ThenInclude(x => x.Nationality)
                 .Include(x => x.Categories)
                 .Select(x => new MovieDto
                 {
-                    Id = x.Id,
                     Title = x.Title,
                     ReleaseYear = x.ReleaseYear,
-                    Categories = x.Categories.Select(c => new CategoryDto
+                    Categories = x.Categories!.Select(c => new CategoryDto
                     {
-                        Id = c.Id,
                         Name = c.Name,
                     }).ToList(),
-                    Directors = x.Directors.Select(d => new DirectorDto
+                    Directors = x.Directors!.Select(d => new DirectorDto
                     {
-                        Id = d.Id,
                         Name = d.Name,
                         Contact = d.Contact,
                         Email = d.Email,
                         Nationality = new NationalityDto
                         {
-                            Id = d.Nationality.Id,
                             Name = d.Nationality.Name,
                         }
-
                     }).ToList()
                 }).ToList();
 
             return books;
         }
 
-        public MovieDtoForOne? getById(int id)
+        public MovieDto? getById(int id)
         {
             var x = _context.Movies
-                .Include(x => x.Directors)
+                .Include(x => x.Directors)!
                 .ThenInclude(x => x.Nationality)
                 .Include(x => x.Categories)
                 .FirstOrDefault(x => x.Id == id);
             if (x is null)
                 return null;
 
-            return new MovieDtoForOne
+            return new MovieDto
             {
-                Id = x.Id,
                 Title = x.Title,
                 ReleaseYear = x.ReleaseYear,
                 Categories = x.Categories.Select(c => new CategoryDto
                 {
-                    Id = c.Id,
                     Name = c.Name,
                 }).ToList(),
-                Directors = x.Directors.Select(d => new DirectorDtoForOne
+                Directors = x.Directors.Select(d => new DirectorDto
                 {
-                    Id = d.Id,
                     Name = d.Name,
                     Contact = d.Contact,
                     Email = d.Email,
-                    Nationality = new CreateNationalityDto
+                    Nationality = new NationalityDto
                     {
                         Name = d.Nationality.Name,
                     }

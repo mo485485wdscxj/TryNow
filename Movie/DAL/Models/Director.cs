@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Movies_project.DAL.Data.Models
+namespace Movies_project.DAL.Models
 {
     public class Director
     {
@@ -12,7 +12,7 @@ namespace Movies_project.DAL.Data.Models
 
         [EmailAddress, Required]
         public string Email { get; set; } = string.Empty;
-        public ICollection<Movie>? Movies { get; set; }
+        public ICollection<Movie>? Movies { get; set; } = new List<Movie>();
         public Nationality? Nationality { get; set; }
     }
 }

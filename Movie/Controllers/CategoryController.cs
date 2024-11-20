@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Movies_project.BLL.Dtos.CategoryDtos;
-using Movies_project.BLL.Dtos.MovieDtos;
-using Movies_project.DAL.Repositories.Interfaces;
+using Movies_project.DAL.Repositories;
 
 namespace Movies_project.Controllers
 {
