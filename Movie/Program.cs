@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Movies_project.DAL.Repositories;
 using Movies_project.DAL.Repositories.Impelementions;
 using Movies_project.DAL.Repositories.Interfaces;
 using Movies_projects.DAL.Data;
