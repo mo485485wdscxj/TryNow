@@ -7,12 +7,12 @@ namespace Movies_project.BLL.Dtos.DirectorDtos
 {
     public class DirectorDto
     {
-        public string Name { get; set; } = string.Empty;
+        public string? Name { get; set; } = string.Empty;
         [Phone]
-        public string Contact { get; set; } = string.Empty;
+        public string? Contact { get; set; } = string.Empty;
 
         [EmailAddress]
-        public string Email { get; set; } = string.Empty;
+        public string? Email { get; set; } = string.Empty;
 
         public NationalityDto? Nationality { get; set; }
     }

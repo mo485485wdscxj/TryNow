@@ -40,7 +40,6 @@ namespace Movies_project.DAL.Repositories.Impelementions
             {
                 return false;
             }
-
         }
     }
 }
